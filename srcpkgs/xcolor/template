@@ -14,5 +14,14 @@ distfiles="https://github.com/Soft/xcolor/archive/refs/tags/0.5.1.tar.gz"
 checksum=cff417d0ccbece766c66a183413e167868fdbd98b8129516ff9021a4b11a5647
 
 post_install() {
+	vman man/xcolor.1
+
+	vinstall extra/xcolor.desktop 644 usr/share/applications
+
+	for size in 16 24 32 48 256 512; do
+		vinstall extra/icons/xcolor-${size}.png 644 usr/share/icons/hicolor/${size}x${size}/apps xcolor.png
+	done
+	vinstall extra/icons/xcolor.svg 644 usr/share/icons/hicolor/scalable/apps
+
 	vlicense LICENSE
 }
