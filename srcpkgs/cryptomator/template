@@ -1,0 +1,45 @@
+# Template file for 'cryptomator'
+pkgname=cryptomator
+version=1.6.7
+revision=1
+hostmakedepends="apache-maven openjdk17"
+depends="fuse openjdk17-jre"
+short_desc="Multi-platform transparent client-side encryption of your files in the cloud"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://cryptomator.org"
+distfiles="https://github.com/cryptomator/cryptomator/archive/refs/tags/${version}.tar.gz"
+checksum=8013ad16099773020cf6d479295b27a016e285db6823ee6f34920d50020d1627
+
+do_build() {
+	mvn clean package -Plinux -DskipTests
+}
+
+do_install() {
+	vmkdir usr/share/${pkgname}
+
+	vmkdir usr/share/${pkgname}/lib
+	vcopy "target/libs/*" usr/share/${pkgname}/lib
+
+	vmkdir usr/share/${pkgname}/mods
+	vcopy "target/mods/*" usr/share/${pkgname}/mods
+
+	vinstall target/${pkgname}-${version}.jar 644 usr/share/${pkgname}/mods
+
+	vbin ${FILESDIR}/cryptomator
+}
+
+post_install() {
+	vinstall dist/linux/common/org.cryptomator.Cryptomator.desktop 644 usr/share/applications
+
+	for size in 256 512; do
+		vinstall dist/linux/common/org.cryptomator.Cryptomator${size}.png 644 usr/share/icons/hicolor/${size}x${size}/apps org.cryptomator.Cryptomator.png
+	done
+	vinstall dist/linux/common/org.cryptomator.Cryptomator.svg 644 usr/share/icons/hicolor/scalable/apps
+
+	vlicense LICENSE.txt
+}
+
+do_check() {
+	mvn test
+}
