@@ -1,0 +1,16 @@
+# Template file for 'fastfetch'
+pkgname=fastfetch
+version=1.2.3
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config"
+short_desc="Like neofetch, but much faster because written in c"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/LinusDierheimer/fastfetch"
+distfiles="https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/${version}.tar.gz"
+checksum=c782345b25eff0d32a20aeb00f9d349288b196d701abb4c1dc32f18f5f7332af
+
+post_install() {
+	vlicense LICENSE
+}
