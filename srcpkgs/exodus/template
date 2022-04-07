@@ -1,0 +1,26 @@
+# Template file for 'exodus'
+pkgname=exodus
+version=22.3.31
+revision=1
+archs="x86_64"
+short_desc="Bitcoin & Crypto Wallet"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://www.exodus.com/"
+distfiles="https://downloads.exodus.com/releases/exodus-linux-x64-${version}.zip"
+checksum=2c94fa2f9cec42b23f3a1bc2778cd112cbe4040aea1c3ffe6f6b1f2a3899abf5
+wrksrc=Exodus-linux-x64
+
+do_install() {
+	vmkdir usr/lib/${pkgname}
+
+	vcopy * usr/lib/${pkgname}
+
+	vbin ${FILESDIR}/exodus
+}
+
+post_install() {
+	vinstall ${FILESDIR}/exodus.desktop 644 usr/share/applications
+
+	vlicense LICENSE
+}

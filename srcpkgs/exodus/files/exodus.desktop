@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Exodus
+Comment=Secure, manage, and trade blockchain assets.
+Exec=sh -c 'cd /usr/lib/exodus && ./Exodus %u'
+Terminal=false
+MimeType=x-scheme-handler/exodus;
+Categories=Utility;Network;Finance;
+Encoding=UTF-8
