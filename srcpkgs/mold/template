@@ -1,0 +1,17 @@
+# Template file for 'mold'
+pkgname=mold
+version=1.1.1
+revision=1
+build_style=gnu-makefile
+hostmakedepends="pkg-config cmake"
+makedepends="openssl-devel zlib-devel"
+short_desc="Faster drop-in replacement for existing Unix linkers"
+maintainer="Elvyria"
+license="AGPL-3.0-only"
+homepage="https://github.com/rui314/mold"
+distfiles="https://github.com/rui314/mold/archive/refs/tags/v${version}.tar.gz"
+checksum=47c5ddfe60beffc01da954191c819d78924e4d1eb96aeebfa24e1862cb3a33f9
+
+post_install() {
+	vlicense LICENSE
+}
