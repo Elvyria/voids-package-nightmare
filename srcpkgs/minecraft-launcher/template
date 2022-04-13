@@ -8,8 +8,8 @@ short_desc="Official Minecraft Launcher"
 maintainer="Elvyria"
 license="custom:Proprietary"
 homepage="https://www.minecraft.net"
-site="https://launchermeta.mojang.com/v1/products/launcher/bb3355e087ada56549e6342233b57bf65d9d7147/linux.json"
-distfiles="https://launcher.mojang.com/v1/objects/eb4ad36e1c78e57e5ed1550fc35067475a05a521/minecraft-launcher"
+site="https://launchermeta.mojang.com/v1/products/launcher/6f083b80d5e6fabbc4236f81d0d8f8a350c665a9/linux.json"
+distfiles="https://launcher.mojang.com/v1/objects/4392471202bb9dff482db8a5551a7643da955ace/minecraft-launcher"
 checksum=1ddd304ea9c997eb3654a98820a53d7c525d019b0eb3723848d59b05aa2adfc3
 skip_extraction="minecraft-launcher"
 
