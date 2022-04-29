@@ -1,0 +1,20 @@
+# Template file for 'deno-bin'
+pkgname=deno-bin
+version=1.21.1
+revision=1
+hostmakedepends="unzip"
+short_desc="A modern runtime for JavaScript and TypeScript"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://deno.land"
+distfiles="https://github.com/denoland/deno/releases/download/v${version}/deno-x86_64-unknown-linux-gnu.zip"
+checksum=288829dcade1efd82e3dd83b1676568a3fb622724891c4b154cae62cfeebca03
+conflicts="deno>=0"
+
+do_extract() {
+	unzip ${XBPS_SRCDISTDIR}/${pkgname}-${version}/deno-x86_64-unknown-linux-gnu.zip -d ${wrksrc}
+}
+
+do_install() {
+	vbin deno
+}
