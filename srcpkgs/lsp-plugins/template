@@ -1,0 +1,48 @@
+# Template file for 'lsp-plugins'
+pkgname=lsp-plugins
+version=1.2.1
+revision=1
+build_style=gnu-makefile
+make_use_env=yes
+hostmakedepends="pkg-config"
+makedepends="lv2 php cairo-devel jack-devel libsndfile-devel"
+short_desc="Linux Studio Plugins Project"
+maintainer="Elvyria"
+license="LGPL-3.0"
+homepage="https://lsp-plug.in"
+distfiles="https://github.com/sadko4u/lsp-plugins/releases/download/${version}/lsp-plugins-src-${version}.tar.gz"
+checksum=c0789b6496eb832eedd33dab4437b5154006dfc056fdd474260a0a5566029fad
+wrksrc=${pkgname}
+
+pre_build() {
+	make config PREFIX=/usr
+}
+
+# TODO: 
+# lsp-plugins-jack_package() {
+	# short_desc+=" JACK"
+	# pkg_install() {
+		# vmove usr/lib/lsp-plugins/liblsp-plugins-jack-1.2.1.so
+	# }
+# }
+
+lsp-plugins-ladspa_package() {
+	short_desc+=" LADSPA"
+	pkg_install() {
+		vmove usr/lib/ladspa
+	}
+}
+
+lsp-plugins-lv2_package() {
+	short_desc+=" LV2"
+	pkg_install() {
+		vmove usr/lib/lv2
+	}
+}
+
+lsp-plugins-vst2_package() {
+	short_desc+=" VST2"
+	pkg_install() {
+		vmove usr/lib/vst
+	}
+}
