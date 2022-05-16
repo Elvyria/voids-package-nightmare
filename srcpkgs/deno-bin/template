@@ -1,6 +1,6 @@
 # Template file for 'deno-bin'
 pkgname=deno-bin
-version=1.21.1
+version=1.21.3
 revision=1
 hostmakedepends="unzip"
 short_desc="A modern runtime for JavaScript and TypeScript"
