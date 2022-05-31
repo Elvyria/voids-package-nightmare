@@ -1,5 +1,5 @@
-# Template file for 'nvidia-vaapi-driver'
-pkgname=nvidia-vaapi-driver
+# Template file for 'libva-nvidia-driver'
+pkgname=libva-nvidia-driver
 version=0.0.5
 revision=1
 build_style=meson
