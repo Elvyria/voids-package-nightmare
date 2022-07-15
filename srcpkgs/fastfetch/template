@@ -1,6 +1,6 @@
 # Template file for 'fastfetch'
 pkgname=fastfetch
-version=1.3.4
+version=1.5.6
 revision=1
 build_style=cmake
 hostmakedepends="pkg-config"
@@ -9,7 +9,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/LinusDierheimer/fastfetch"
 distfiles="https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/${version}.tar.gz"
-checksum=90287dbec10c8ccb8d409d1a5dfd73ab114d4f613d094888da9dfa8f2e30b8c7
+checksum=26321e5505145cca9c8fd09a772c313f17c415a3bee0169cd15b16e638241912
 
 post_install() {
 	vlicense LICENSE
