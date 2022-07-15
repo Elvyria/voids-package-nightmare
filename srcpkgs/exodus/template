@@ -1,6 +1,6 @@
 # Template file for 'exodus'
 pkgname=exodus
-version=22.3.31
+version=22.7.15
 revision=1
 archs="x86_64"
 short_desc="Bitcoin & Crypto Wallet"
@@ -8,7 +8,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://www.exodus.com/"
 distfiles="https://downloads.exodus.com/releases/exodus-linux-x64-${version}.zip"
-checksum=2c94fa2f9cec42b23f3a1bc2778cd112cbe4040aea1c3ffe6f6b1f2a3899abf5
+checksum=b50c31ce1cbe776840ed5bd907da9217bb9a6087df0325fda2f65843c1c3101f
 wrksrc=Exodus-linux-x64
 
 do_install() {
