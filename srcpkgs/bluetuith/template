@@ -1,0 +1,17 @@
+# Template file for 'bluetuith'
+pkgname=bluetuith
+version=0.0.3
+revision=1
+build_style=go
+go_import_path="github.com/darkhz/bluetuith"
+depends="bluez dbus"
+short_desc="TUI-based bluetooth connection manager"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/tarka/bluetuith"
+distfiles="https://github.com/darkhz/bluetuith/archive/refs/tags/v${version}.zip"
+checksum=3fd8aff3ac7618e6eee18adbd06ffee22f63bb94dce535ebecbb3bb2b48b2223
+
+post_install() {
+	vlicense LICENSE
+}
