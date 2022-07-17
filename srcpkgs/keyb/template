@@ -1,0 +1,16 @@
+# Template file for 'keyb'
+pkgname=keyb
+version=0.1.0
+revision=1
+build_style=go
+go_import_path="github.com/kencx/keyb"
+short_desc="Create and view your own custom hotkey cheatsheet with TUI"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/kencx/keyb"
+distfiles="https://github.com/kencx/keyb/archive/refs/tags/v${version}.zip"
+checksum=6bac4fee98e87b14d84daf88300defd00d1cbf0982a8f19ed037fd70c0c962d6
+
+post_install() {
+	vlicense LICENSE
+}
