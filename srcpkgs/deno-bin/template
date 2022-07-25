@@ -1,6 +1,6 @@
 # Template file for 'deno-bin'
 pkgname=deno-bin
-version=1.23.4
+version=1.24.0
 revision=1
 hostmakedepends="unzip"
 short_desc="A modern runtime for JavaScript and TypeScript"
@@ -8,7 +8,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://deno.land"
 distfiles="https://github.com/denoland/deno/releases/download/v${version}/deno-x86_64-unknown-linux-gnu.zip"
-checksum=236cf6fd65fed078fa4456a358f47b8485f51d308381a6dca9683ad8ef4c2372
+checksum=13905c8e04c5b58d03e9b4970eeba91560d4471e18a7933e503a1d98660200ad
 conflicts="deno>=0"
 
 do_extract() {
@@ -17,4 +17,11 @@ do_extract() {
 
 do_install() {
 	vbin deno
+}
+
+post_install() {
+	for cmp in bash fish zsh; do
+		./deno completions $cmp > $cmp
+		vcompletion $cmp $cmp deno
+	done
 }
