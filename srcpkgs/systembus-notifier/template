@@ -1,0 +1,19 @@
+# Template file for 'systembus-notifier'
+pkgname=systembus-notifier
+version=0.1.1
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config"
+makedepends="dbus-devel"
+depends="dbus"
+short_desc="Redirects D-Bus notifications from system to user"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/Elvyria/systembus-notifier"
+distfiles="https://github.com/Elvyria/systembus-notifier/archive/refs/tags/0.1.1.tar.gz"
+checksum=1dde016cf3495b93b2ee77fa82765f5fba8ae4b23269a82f951f64242368170d
+
+post_install() {
+	vsv systembus-notifier
+	vlicense LICENSE
+}
