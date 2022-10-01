@@ -1,0 +1,13 @@
+diff --git a/install/CMakeLists.txt b/install/CMakeLists.txt
+index 4762f9f..13d1a98 100644
+--- a/install/CMakeLists.txt
++++ b/install/CMakeLists.txt
+@@ -15,7 +15,7 @@ if(${SHOURNAL_EDITION} MATCHES "full|ko")
+ 
+ install(FILES
+     "${CMAKE_CURRENT_BINARY_DIR}/90-shournaladd.rules"
+-    DESTINATION "/lib/udev/rules.d"
++    DESTINATION "/usr/lib/udev/rules.d"
+     )
+ 
+ install(FILES

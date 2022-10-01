@@ -1,0 +1,23 @@
+# Template file for 'shournal'
+pkgname=shournal
+version=2.9
+revision=1
+build_style=cmake
+make_cmd=make
+configure_args="-DSHOURNAL_EDITION=full"
+hostmakedepends="pkg-config cmake"
+makedepends="linux-headers qt5-devel qt5-plugin-mysql qt5-plugin-odbc qt5-plugin-pgsql qt5-plugin-sqlite qt5-plugin-tds libcap-devel"
+depends="dkms"
+short_desc="A (file-) journal for your shell"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://github.com/tycho-kirchner/shournal"
+distfiles="https://github.com/tycho-kirchner/shournal/archive/refs/tags/v${version}.tar.gz"
+checksum=bc457706341be384ea3ca971cf23a0a659a4320e3c4e971f2b8294d8e5685e26
+dkms_modules="shournalk ${version}"
+
+export CMAKE_GENERATOR="Unix Makefiles"
+
+post_install() {
+	vlicense LICENSE
+}
