@@ -1,0 +1,21 @@
+# Template file for 'dbus-broker'
+pkgname=dbus-broker
+version=32
+revision=1
+build_style=meson
+configure_args="$(vopt_bool launcher) $(vopt_bool docs) $(vopt_bool audit) $(vopt_bool selinux)"
+hostmakedepends="pkg-config $(vopt_if docs python-docutils)"
+makedepends="$(vopt_if audit libaudit-devel) $(vopt_if audit libcap-ng-devel) $(vopt_if selinux libsepol-devel) $(vopt_if selinux libselinux-devel) $(vopt_if selinux pcre-devel)"
+short_desc="Linux D-Bus Message Broker"
+maintainer="Elvyria"
+license="Apache-2.0"
+homepage="https://github.com/bus1/dbus-broker"
+distfiles="https://github.com/bus1/dbus-broker/releases/download/v${version}/dbus-broker-${version}.tar.xz"
+checksum=bea7f653e7251063c5f427e9e3f93562d38a0d8667ae6d49fb56f113605985de
+
+build_options="audit docs launcher selinux"
+build_options_default=""
+
+post_install() {
+	vlicense LICENSE
+}
