@@ -1,0 +1,18 @@
+# Template file for 'soundux'
+pkgname=soundux
+version=0.2.7
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config"
+makedepends="pipewire-devel pulseaudio-devel libdwarf-devel libX11-devel libwnck-devel libappindicator-devel gtk+3-devel webkit2gtk-devel openssl-devel"
+depends="pipewire-devel" # https://github.com/Soundux/Soundux/issues/580
+short_desc="A cross-platform soundboard"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://soundux.rocks/"
+distfiles="https://github.com/Soundux/Soundux/releases/download/${version}/soundux-${version}.tar.gz"
+checksum=017003fc96f49df30575975f3904c0d8a500e325a9d2bca8c3dc69fed0cab0a7
+
+post_install() {
+	vlicense LICENSE
+}

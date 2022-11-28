@@ -1,0 +1,36 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,7 +39,7 @@
+     target_compile_options(soundux PRIVATE /W4)
+ else()
+     add_executable(soundux ${src})
+-    target_compile_options(soundux PRIVATE -Wall -Werror -Wextra -pedantic -Wno-unused-lambda-capture -Wno-gnu)
++    target_compile_options(soundux PRIVATE -Wall -Wextra -pedantic)
+ endif()
+ 
+ target_compile_definitions(soundux PRIVATE SOUNDUX_VERSION="${FULL_VERSION_STRING}" WNCK_I_KNOW_THIS_IS_UNSTABLE=1)
+diff --git a/lib/traypp/CMakeLists.txt b/lib/traypp/CMakeLists.txt
+--- a/lib/traypp/CMakeLists.txt
++++ b/lib/traypp/CMakeLists.txt
+@@ -15,7 +15,7 @@
+     pkg_check_modules(APPINDICATOR REQUIRED appindicator3-0.1)
+ 
+     target_link_libraries(tray INTERFACE ${GTK3_LIBRARIES} ${APPINDICATOR_LIBRARIES})
+-    target_compile_options(tray PRIVATE -Wall -Wextra -Werror -pedantic -Wno-unused-lambda-capture)
++    target_compile_options(tray PRIVATE -Wall -Wextra -pedantic)
+     target_include_directories(tray SYSTEM PUBLIC ${GTK3_INCLUDE_DIRS} ${APPINDICATOR_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR})
+ endif()
+
+diff --git a/src/ui/impl/webview/lib/webviewpp/CMakeLists.txt b/src/ui/impl/webview/lib/webviewpp/CMakeLists.txt
+--- a/src/ui/impl/webview/lib/webviewpp/CMakeLists.txt
++++ b/src/ui/impl/webview/lib/webviewpp/CMakeLists.txt
+@@ -26,7 +26,7 @@
+     target_link_libraries(webview INTERFACE Version.lib Shlwapi.lib ${CMAKE_BINARY_DIR}/packages/Microsoft.Web.WebView2/build/native/x64/WebView2LoaderStatic.lib ${CMAKE_BINARY_DIR}/packages/Microsoft.Windows.ImplementationLibrary/build/native/Microsoft.Windows.ImplementationLibrary.targets)
+     target_include_directories(webview SYSTEM PUBLIC ${CMAKE_BINARY_DIR}/packages/Microsoft.Web.WebView2/build/native/include ${CMAKE_BINARY_DIR}/packages/Microsoft.Windows.ImplementationLibrary/include)
+ elseif(UNIX)
+-    target_compile_options(webview PRIVATE -Wall -Wextra -Werror -pedantic -Wno-unused-lambda-capture)
++    target_compile_options(webview PRIVATE -Wall -Wextra -pedantic)
+     
+     find_package(PkgConfig REQUIRED)
+ 	pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
