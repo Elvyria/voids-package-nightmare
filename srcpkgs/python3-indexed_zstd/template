@@ -1,0 +1,18 @@
+# Template file for 'python3-indexed_zstd'
+pkgname=python3-indexed_zstd
+version=1.5.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends="libzstd-devel python3-devel"
+depends="python3"
+short_desc="A bridge for libzstd-seek to python"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/martinellimarco/indexed_zstd"
+distfiles="${PYPI_SITE}/i/indexed_zstd/indexed_zstd-${version}.tar.gz"
+checksum=2bc2897203e22969c1e3d4c7ea9b1c23c19f54f385cf4daa30167a2fbd771bf9
+
+post_install() {
+	vlicense LICENSE
+}
