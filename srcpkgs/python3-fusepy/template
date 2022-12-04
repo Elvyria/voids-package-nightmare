@@ -1,0 +1,13 @@
+# Template file for 'python3-fusepy'
+pkgname=python3-fusepy
+version=3.0.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3"
+short_desc="Simple ctypes bindings for FUSE"
+maintainer="Elvyria"
+license="ISC"
+homepage="https://github.com/fusepy/fusepy"
+distfiles="${PYPI_SITE}/f/fusepy/fusepy-${version}.tar.gz"
+checksum=72ff783ec2f43de3ab394e3f7457605bf04c8cf288a2f4068b4cde141d4ee6bd
