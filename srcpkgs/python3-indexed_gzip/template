@@ -1,0 +1,17 @@
+# Template file for 'python3-indexed_gzip'
+pkgname=python3-indexed_gzip
+version=1.7.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel python3-Cython zlib-devel"
+short_desc="Fast random access of gzip files in Python"
+maintainer="Elvyria"
+license="Zlib"
+homepage="https://github.com/pauldmccarthy/indexed_gzip"
+distfiles="${PYPI_SITE}/i/indexed_gzip/indexed_gzip-${version}.tar.gz"
+checksum=cad57229f3cf9794d2fb4e7b90a583de298884e4ff83642f3ea4fd257ea50411
+
+post_install() {
+	vlicense LICENSE
+}
