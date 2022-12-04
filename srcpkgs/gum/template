@@ -1,6 +1,6 @@
 # Template file for 'gum'
 pkgname=gum
-version=0.1.0
+version=0.8.0
 revision=1
 build_style=go
 go_import_path="github.com/charmbracelet/gum"
@@ -9,7 +9,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/charmbracelet/gum"
 distfiles="https://github.com/charmbracelet/gum/archive/refs/tags/v${version}.zip"
-checksum=44f9ec998d9c5d9a4a9b5e02dfd510aa291d451eb3c4f1c40a6a7078d4db149e
+checksum=069586398c02000c04bf5d64b536a68a1c513a9e85bcf7ed2becceb3b59632d4
 
 post_install() {
 	for cmp in bash fish zsh; do
