@@ -1,6 +1,6 @@
 # Template file for 'libva-nvidia-driver'
 pkgname=libva-nvidia-driver
-version=0.0.6
+version=0.0.7
 revision=1
 build_style=meson
 hostmakedepends="pkg-config"
@@ -11,5 +11,5 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/elFarto/nvidia-vaapi-driver"
 distfiles="https://github.com/elFarto/nvidia-vaapi-driver/archive/refs/tags/v${version}.tar.gz"
-checksum=8a64c069200750f12d013c79547e459cbb87b498357478c5f36cb97f710294e0
+checksum=c19e35d41cd39a93c2a1af99065d51719a994fdd89f8b0716914cba7e716718e
 wrksrc="nvidia-vaapi-driver-${version}"
