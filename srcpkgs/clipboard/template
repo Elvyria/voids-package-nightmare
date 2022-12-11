@@ -1,0 +1,16 @@
+# Template file for 'clipboard'
+pkgname=clipboard
+version=0.1.2R1
+revision=1
+build_style=cmake
+short_desc="Cut, copy, and paste anything in your terminal"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://github.com/Slackadays/Clipboard"
+distfiles="https://github.com/Slackadays/Clipboard/archive/refs/tags/${version}.tar.gz"
+checksum=cd48aa825efd35a54d57573761595e10b5d676f9eda806b6c6b1774d5ac3c015
+build_wrksrc=src
+
+post_install() {
+	vlicense "${wrksrc}/LICENSE"
+}
