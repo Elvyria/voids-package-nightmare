@@ -1,16 +1,19 @@
 # Template file for 'clipboard'
 pkgname=clipboard
-version=0.1.2R1
+version=0.3.1
 revision=1
 build_style=cmake
+hostmakedepends="pkg-config"
+makedepends="libX11-devel"
+configure_args="-DCMAKE_BUILD_TYPE=MinSizeRel"
 short_desc="Cut, copy, and paste anything in your terminal"
 maintainer="Elvyria"
 license="GPL-3.0"
 homepage="https://github.com/Slackadays/Clipboard"
 distfiles="https://github.com/Slackadays/Clipboard/archive/refs/tags/${version}.tar.gz"
-checksum=cd48aa825efd35a54d57573761595e10b5d676f9eda806b6c6b1774d5ac3c015
-build_wrksrc=src
+checksum=c00580e60c7c402bb0b8e87133fdc511b25205200adb2c17e96c5811cc79c37d
 
 post_install() {
+	vman documentation/manpages/man.1 clipboard.1
 	vlicense "${wrksrc}/LICENSE"
 }
