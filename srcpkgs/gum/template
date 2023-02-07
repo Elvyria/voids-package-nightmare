@@ -1,6 +1,6 @@
 # Template file for 'gum'
 pkgname=gum
-version=0.8.0
+version=0.9.0
 revision=1
 build_style=go
 go_import_path="github.com/charmbracelet/gum"
@@ -9,13 +9,16 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/charmbracelet/gum"
 distfiles="https://github.com/charmbracelet/gum/archive/refs/tags/v${version}.zip"
-checksum=069586398c02000c04bf5d64b536a68a1c513a9e85bcf7ed2becceb3b59632d4
+checksum=ff8d346ee2b9734b099386fd208601d439bc90358f800d0b8123473b29240a91
 
 post_install() {
 	for cmp in bash fish zsh; do
 		${DESTDIR}/usr/bin/gum completion $cmp > $cmp
 		vcompletion $cmp $cmp $pkgname
 	done
+
+	${DESTDIR}/usr/bin/gum man > gum.1
+	vman gum.1
 
 	vlicense LICENSE
 }
