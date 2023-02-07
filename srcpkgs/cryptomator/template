@@ -1,6 +1,6 @@
 # Template file for 'cryptomator'
 pkgname=cryptomator
-version=1.6.10
+version=1.6.15
 revision=1
 hostmakedepends="apache-maven openjdk17"
 depends="fuse openjdk17-jre"
@@ -9,7 +9,7 @@ maintainer="Elvyria"
 license="GPL-3.0"
 homepage="https://cryptomator.org"
 distfiles="https://github.com/cryptomator/cryptomator/archive/refs/tags/${version}.tar.gz"
-checksum=e5434ed195a89f072663a5fa5b8a245a3b24c8f114a58882d40f96134820686c
+checksum=e4c75f3fc3c60178e5f44a3f5a6199bdcc8edcb45cb09d6d4fb0efbed27170a7
 
 do_build() {
 	mvn clean package -Plinux -DskipTests
