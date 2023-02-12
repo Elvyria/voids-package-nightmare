@@ -1,0 +1,22 @@
+# Template file for 'dwarfs'
+pkgname=dwarfs
+version=0.6.2
+revision=1
+build_style=cmake
+configure_args="-Wno-dev"
+hostmakedepends="pkg-config"
+makedepends="boost-devel double-conversion-devel fmt-devel fuse3-devel gflags-devel glog-devel jemalloc-devel libaio-devel libarchive-devel libdwarf-devel libevent-devel libiberty-devel liblz4-devel liblzma-devel libsodium-devel liburing-devel libzstd-devel ruby-ronn snappy-devel"
+short_desc="A fast high compression read-only file system"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://github.com/mhx/dwarfs"
+distfiles="https://github.com/mhx/dwarfs/releases/download/v${version}/dwarfs-${version}.tar.bz2"
+checksum=b411c9c26df4455762c04ecd72ae18fe5a6524572252d8d1e89a9ec9347ed149
+
+post_install() {
+	vbin ${DESTDIR}/usr/sbin/dwarfs
+	ln -sr ${DESTDIR}/usr/bin/dwarfs ${DESTDIR}/usr/bin/mount.dwarfs
+
+	rm -r ${DESTDIR}/usr/sbin
+	rm ${DESTDIR}/usr/lib64
+}
