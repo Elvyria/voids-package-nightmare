@@ -1,0 +1,45 @@
+# Template file for 'libelfin'
+pkgname=libelfin
+version=0.3
+revision=1
+build_style=gnu-makefile
+hostmakedepends="git python3"
+short_desc="C++11 ELF/DWARF parser"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/antoyo/libelfin"
+distfiles="https://github.com/antoyo/libelfin/archive/refs/tags/v${version}.tar.gz"
+checksum=c338942b967582922b3514b54b93175ca9051a9668db92dd8ef619824d443ac7
+
+do_install() {
+	make PREFIX="$DESTDIR/usr" install
+}
+
+post_install() {
+	vlicense LICENSE
+
+	rm -r ${DESTDIR}/usr/lib/pkgconfig
+}
+
+libelfin_package() {
+	pkg_install() {
+		vmove usr/lib/libelf++.so.*
+		vmove usr/lib/libdwarf++.so.*
+	}
+}
+
+libelfin-devel_package() {
+	depends="libelfin-${version}_${revision}"
+	short_desc+=" - C++ development files"
+	pkg_install() {
+		vinstall ${FILESDIR}/libelf++.pc 644 usr/lib/pkgconfig
+		vmove usr/include/libelfin/elf
+		vmove usr/lib/libelf++.a
+		vmove usr/lib/libelf++.so
+
+		vinstall ${FILESDIR}/libdwarf++.pc 644 usr/lib/pkgconfig
+		vmove usr/include/libelfin/dwarf
+		vmove usr/lib/libdwarf++.a
+		vmove usr/lib/libdwarf++.so
+	}
+}

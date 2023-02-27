@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libdwarf++
+URL: https://github.com/antoyo/libelfin
+Description: C++11 DWARF library
+Version: 0.3
+Requires: libelf++ = 0.3
+Libs: -L${libdir} -ldwarf++
+Cflags: -I${includedir}
