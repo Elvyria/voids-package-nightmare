@@ -32,4 +32,7 @@ xi `package`
 ```
 
 ## Notes
+* `SONAME: lib.so.0 <-> UNKNOWN PKG PLEASE FIX!`  
+This error indicates that package requires library which have no package associated with it.  
+To fix - [source](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-_002e) library package template and append `lib.so.0 ${pkgname}-${version}_${revision}` to [common/shlibs](https://github.com/void-linux/void-packages/blob/master/common/shlibs)  
 ...
