@@ -1,0 +1,19 @@
+# Template file for 'coz'
+pkgname=coz
+version=0.2.3
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config"
+makedepends="libelfin-devel"
+depends="python3"
+short_desc="Profiler that unlocks optimization opportunities missed by traditional profilers"
+maintainer="Elvyria"
+license="BSD-2-Clause-FreeBSD"
+homepage="https://github.com/plasma-umass/coz"
+distfiles="https://github.com/plasma-umass/coz/archive/62a36708a3014972cb8dcb25c7797dd0b9cf4b17.zip"
+checksum=4d551f7b319ab5cd87c592f6894756457fa909c8f4db4ef1f4df2e75e8f17b7c
+
+post_install() {
+	vbin coz
+	vlicense LICENSE.md
+}
