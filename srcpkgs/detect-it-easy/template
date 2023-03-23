@@ -1,0 +1,43 @@
+# Template file for 'detect-it-easy'
+pkgname=detect-it-easy
+version=3.07
+revision=1
+build_style=gnu-configure
+hostmakedepends="pkg-config"
+makedepends="qt5-devel qt5-svg-devel qt5-plugin-mysql qt5-plugin-odbc qt5-plugin-pgsql qt5-plugin-sqlite qt5-plugin-tds qt5-script-devel"
+short_desc="program for determining types of files"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/horsicq/Detect-It-Easy"
+distfiles="https://github.com/horsicq/DIE-engine/releases/download/${version}/die_sourcecode_${version}.tar.gz"
+checksum=39bd16b025fb008e95055032f76f3a0f3ca2e3f133846119d793a0eadd0dbb9d
+
+pre_configure() {
+	chmod +x configure
+}
+
+do_install() {
+	vbin build/release/die
+	vbin build/release/diec
+	vbin build/release/diel
+
+	vinstall LINUX/die.desktop 644 usr/share/applications
+
+	for size in 16 20 24 32 48 256; do
+		vinstall LINUX/hicolor/${size}x${size}/apps/detect-it-easy.png 644 usr/share/icons/hicolor/${size}x${size}/apps
+	done
+
+	vmkdir usr/lib/die
+	vmkdir usr/lib/die/signatures
+
+	vinstall signatures/crypto.db 644 usr/lib/die/signatures
+
+	cp -r XStyles/qss       $DESTDIR/usr/lib/die
+	cp -r XInfoDB/info      $DESTDIR/usr/lib/die
+	cp -r Detect-It-Easy/db $DESTDIR/usr/lib/die
+	cp -r images            $DESTDIR/usr/lib/die
+}
+
+post_install() {
+	vlicense LICENSE
+}
