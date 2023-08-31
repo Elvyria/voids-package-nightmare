@@ -1,6 +1,8 @@
 # Template file for 'fastfetch'
 pkgname=fastfetch
-version=1.7.5
+# All future versions have performance regressions
+# Use `--multithreading 0` if it panics
+version=1.8.2
 revision=1
 build_style=cmake
 hostmakedepends="pkg-config"
@@ -9,7 +11,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/LinusDierheimer/fastfetch"
 distfiles="https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/${version}.tar.gz"
-checksum=e9807568c2c5a10240c635e1e9ad5dbe63326eb730ca3aac005e19d91d2cd1c5
+checksum=552f4239a83d31e2fb14bdf7fc5d74cc6cc819f8b6ddd2346ba0dcfac13ac62a
 
 post_install() {
 	vlicense LICENSE
