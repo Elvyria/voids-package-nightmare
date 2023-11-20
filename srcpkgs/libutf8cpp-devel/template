@@ -1,0 +1,15 @@
+# Template file for 'libutf8cpp-devel'
+pkgname=libutf8cpp-devel
+version=4.0.2
+revision=1
+build_style=cmake
+short_desc="UTF-8 with C++ in a Portable Way"
+maintainer="Elvyria"
+license="BSL-1.0"
+homepage="https://github.com/nemtrif/utfcpp"
+distfiles="https://github.com/nemtrif/utfcpp/archive/refs/tags/v${version}.tar.gz"
+checksum=d3c032650cd30823b7ebbebbe91f39d8c0e91221b2e3e92b93ca425478f986f2
+
+post_install() {
+	vlicense LICENSE
+}
