@@ -1,6 +1,6 @@
 # Template file for 'gtk4-layer-shell'
 pkgname=gtk4-layer-shell
-version=1.0.1
+version=1.0.2
 revision=1
 build_style=meson
 build_helper="gir"
@@ -11,7 +11,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/wmww/gtk4-layer-shell"
 distfiles="https://github.com/wmww/gtk4-layer-shell/archive/v${version}.tar.gz"
-checksum=f7b8d352065a540d4cb7b0cbfdeb2c2efea55b57cfb717de5c880fde41e65cb1
+checksum=a3a827845612fa15de30734eb29c01db329c32f8e279d8bc5251facc69220b86
 
 if [ "$XBPS_CHECK_PKGS" ]; then
 	configure_args+=" -Dtests=true"
