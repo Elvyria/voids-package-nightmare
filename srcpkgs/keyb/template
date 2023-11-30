@@ -1,6 +1,6 @@
 # Template file for 'keyb'
 pkgname=keyb
-version=0.1.0
+version=0.7.0
 revision=1
 build_style=go
 go_import_path="github.com/kencx/keyb"
@@ -9,7 +9,7 @@ maintainer="Elvyria"
 license="MIT"
 homepage="https://github.com/kencx/keyb"
 distfiles="https://github.com/kencx/keyb/archive/refs/tags/v${version}.zip"
-checksum=6bac4fee98e87b14d84daf88300defd00d1cbf0982a8f19ed037fd70c0c962d6
+checksum=8dbc99534f21169f85712177129beb6b7e3ecd9ea1ab80e573179ea15738d2df
 
 post_install() {
 	vlicense LICENSE
