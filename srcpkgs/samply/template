@@ -1,0 +1,21 @@
+# Template file for 'samply'
+pkgname=samply
+version=0.11.0
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config"
+short_desc="Command-line sampling profiler for macOS and Linux"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/mstange/samply/"
+distfiles="https://github.com/mstange/samply/archive/refs/tags/samply-v${version}.tar.gz"
+checksum=9b8e1491f76ee009dc407f289cf5a51452cc2200888a80645aee5187ca987f20
+build_wrksrc=samply
+
+do_build() {
+	cargo auditable build --release --target ${RUST_TARGET} ${configure_args}
+}
+
+post_install() {
+	vlicense ../LICENSE-MIT
+}
