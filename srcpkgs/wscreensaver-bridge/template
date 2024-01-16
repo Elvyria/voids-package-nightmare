@@ -1,0 +1,13 @@
+# Template file for 'wscreensaver-bridge'
+pkgname=wscreensaver-bridge
+version=0.3
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config"
+makedepends="dbus-devel"
+short_desc="A bridge between org.freedesktop.ScreenSaver and Wayland's idle inhibit"
+maintainer="Elvyria"
+license="GPL-2.0"
+homepage="https://github.com/kelvie/wscreensaver-bridge"
+distfiles="https://github.com/kelvie/wscreensaver-bridge/archive/refs/tags/v${version}.tar.gz"
+checksum=49c20c9a927d139e0532b566c77dcc54a70cbf212ad31c9054b00906587d17e6
