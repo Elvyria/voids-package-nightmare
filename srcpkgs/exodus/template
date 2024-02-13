@@ -1,6 +1,6 @@
 # Template file for 'exodus'
 pkgname=exodus
-version=23.1.30
+version=24.2.12
 revision=1
 archs="x86_64"
 short_desc="Bitcoin & Crypto Wallet"
