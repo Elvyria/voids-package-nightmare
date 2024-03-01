@@ -1,0 +1,60 @@
+# Template file for 'hyprland'
+pkgname=hyprland
+version=0.36.0
+revision=1
+build_style=cmake
+configure_args="-DNO_SYSTEMD:Bool=true -DCMAKE_BUILD_TYPE:STRING=Release"
+hostmakedepends="autoconf cmake cpio git glslang hwids jq meson mk-configure ninja pkg-config"
+makedepends="
+	Vulkan-Headers
+	cairo-devel
+	ffmpeg-devel
+	libX11-devel
+	libdisplay-info-devel
+	libdrm-devel
+	libgbm-devel
+	libglvnd-devel
+	libinput-devel
+	libliftoff
+	libseat-devel
+	libtoml++-devel
+	libxkbcommon-devel
+	pango-devel
+	pixman-devel
+	vulkan-loader
+	wayland-devel
+	wayland-protocols
+	xcb-util-errors-devel
+	xcb-util-renderutil-devel
+	xcb-util-wm-devel
+	xorg-server-xwayland
+"
+depends="
+	Vulkan-ValidationLayers
+	glslang
+	libXfixes
+	libliftoff
+	libxcb
+	libxkbcommon
+	polkit
+	vulkan-loader
+	wayland-protocols
+	xcb-proto
+	xcb-util
+	xcb-util-keysyms
+	xorg-server-xwayland
+"
+short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
+maintainer="Elvyria"
+license="BSD-3-Clause"
+homepage="https://hyprland.org"
+distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
+checksum=8e44c379794663accf928458b5e363ed248d56fc5f267e6b3759146fdf1229bb
+
+do_install() {
+	make PREFIX=${DESTDIR}/usr install
+}
+
+post_install() {
+	vlicense LICENSE
+}

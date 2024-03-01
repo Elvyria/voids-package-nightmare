@@ -1,0 +1,28 @@
+# Template file for 'libtoml++'.
+pkgname=libtoml++
+version=3.4.0
+revision=1
+build_style=meson
+hostdepends="pkg-config"
+makedepends="cmake"
+short_desc="Header-only TOML config file parser and serializer"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://marzer.github.io/tomlplusplus"
+distfiles="https://github.com/marzer/tomlplusplus/archive/refs/tags/v${version}.tar.gz"
+checksum=8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155
+
+post_install() {
+	vlicense LICENSE
+}
+
+libtoml++-devel_package() {
+	depends="libtoml++-${version}_${revision}"
+	short_desc+=" - C++ development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+		vmove usr/lib/pkgconfig
+	}
+}
