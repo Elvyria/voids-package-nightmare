@@ -1,0 +1,22 @@
+# Template file for 'mixxc'
+pkgname=mixxc
+version=0.1.10
+revision=1
+build_style=cargo
+configure_args="$(vopt_if sass '-F Sass') $(vopt_if wayland '-F Wayland') $(vopt_if x11 '-F X11')"
+hostmakedepends="pkg-config"
+makedepends="gtk4-devel $(vopt_if wayland gtk4-layer-shell-devel)"
+short_desc="Minimalistic volume mixer"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/Elvyria/Mixxc"
+changelog="https://github.com/Elvyria/Mixxc/blob/master/CHANGELOG.md"
+distfiles="https://github.com/Elvyria/Mixxc/archive/refs/tags/${version}.tar.gz"
+checksum=19ee1113589b7afd8b9e0e0ad40323254a371f01e71acd1a9928de272a644eb5
+
+build_options="sass wayland x11"
+build_options_default="sass wayland x11"
+
+post_install() {
+	vlicense LICENSE
+}
