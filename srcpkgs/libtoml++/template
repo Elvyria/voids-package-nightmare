@@ -1,10 +1,9 @@
 # Template file for 'libtoml++'.
 pkgname=libtoml++
 version=3.4.0
-revision=1
+revision=2
 build_style=meson
-hostdepends="pkg-config"
-makedepends="cmake"
+hostmakedepends="pkg-config cmake"
 short_desc="Header-only TOML config file parser and serializer"
 maintainer="Elvyria"
 license="MIT"
