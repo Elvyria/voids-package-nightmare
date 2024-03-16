@@ -1,11 +1,13 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.36.0
+version=0.37.1
 revision=1
 build_style=cmake
 configure_args="-DNO_SYSTEMD:Bool=true -DCMAKE_BUILD_TYPE:STRING=Release"
 hostmakedepends="autoconf cmake cpio git glslang hwids jq meson mk-configure ninja pkg-config"
 makedepends="
+	hyprcursor-devel
+	hyprlang-devel
 	Vulkan-Headers
 	cairo-devel
 	ffmpeg-devel
@@ -35,7 +37,6 @@ depends="
 	libXfixes
 	libliftoff
 	libxcb
-	libxkbcommon
 	polkit
 	vulkan-loader
 	wayland-protocols
@@ -49,7 +50,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://hyprland.org"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=8e44c379794663accf928458b5e363ed248d56fc5f267e6b3759146fdf1229bb
+checksum=bf3c33f7643218af3c44411c28e9a20fcd02225e56d732a8a4a446d9a298f862
 
 do_install() {
 	make PREFIX=${DESTDIR}/usr install
