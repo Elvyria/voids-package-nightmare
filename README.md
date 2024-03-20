@@ -16,6 +16,7 @@ cd void-packages
 ```bash
 git clone --depth 1 https://github.com/Elvyria/voids-package-nightmare
 cp voids-package-nightmare/srcpkgs/* srcpkgs/
+cat voids-package-nightmare/common/shlibs >> common/shlibs
 rm -rf voids-package-nightmare
 ```
 
