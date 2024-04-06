@@ -1,6 +1,6 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.38.0
+version=0.38.1
 revision=1
 build_style=cmake
 configure_args="-DNO_SYSTEMD:Bool=true -DCMAKE_BUILD_TYPE:STRING=Release"
@@ -50,7 +50,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://hyprland.org"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=6e0235ad21ecff471381a50474852bfa0d1ed19bcf71504db5afe658bc305f08
+checksum=1a86365cc006fca4bc96c6c41347d0bde048b6463c516e09b9c54cff58fb73ab
 
 do_install() {
 	make PREFIX=${DESTDIR}/usr install
