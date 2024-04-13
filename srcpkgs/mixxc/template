@@ -1,6 +1,6 @@
 # Template file for 'mixxc'
 pkgname=mixxc
-version=0.2.1
+version=0.2.2
 revision=1
 build_style=cargo
 configure_args="$(vopt_if sass '-F Sass') $(vopt_if wayland '-F Wayland') $(vopt_if x11 '-F X11')"
@@ -12,11 +12,16 @@ license="MIT"
 homepage="https://github.com/Elvyria/Mixxc"
 changelog="https://github.com/Elvyria/Mixxc/blob/master/CHANGELOG.md"
 distfiles="https://github.com/Elvyria/Mixxc/archive/refs/tags/${version}.tar.gz"
-checksum=d085ceb56947079418369099e482e4cfa638ca3d396b9c9786adf0b050e2c7ca
+checksum=baa810bfcb115db976f723ec893a03c791715c0eb19efb11c6f413d57d87654e
 
 build_options="sass wayland x11"
 build_options_default="sass wayland x11"
 
 post_install() {
+	vsconf style/default.css style.css
+	vsconf style/default.scss style.scss
+
+	vman doc/mixxc.1
+
 	vlicense LICENSE
 }
