@@ -1,6 +1,6 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.38.1
+version=0.39.0
 revision=1
 build_style=cmake
 configure_args="-DNO_SYSTEMD:Bool=true -DCMAKE_BUILD_TYPE:STRING=Release"
@@ -17,7 +17,7 @@ makedepends="
 	libgbm-devel
 	libglvnd-devel
 	libinput-devel
-	libliftoff
+	libliftoff-devel
 	libseat-devel
 	libtoml++-devel
 	libxkbcommon-devel
@@ -26,6 +26,7 @@ makedepends="
 	vulkan-loader
 	wayland-devel
 	wayland-protocols
+	xcb-util-image-devel
 	xcb-util-errors-devel
 	xcb-util-renderutil-devel
 	xcb-util-wm-devel
@@ -50,7 +51,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://hyprland.org"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=1a86365cc006fca4bc96c6c41347d0bde048b6463c516e09b9c54cff58fb73ab
+checksum=2f4fc15bf18dc8148aee8cf110d3720adb07f5fe33c5eaafad11e4b21d8e068c
 
 do_install() {
 	make PREFIX=${DESTDIR}/usr install

@@ -1,16 +1,16 @@
 # Template file for 'hyprcursor'
 pkgname=hyprcursor
-version=0.1.5
+version=0.1.7
 revision=1
 build_style=cmake
 hostmakedepends="pkg-config"
-makedepends="cairo-devel hyprlang-devel librsvg-devel libzip-devel"
+makedepends="cairo-devel hyprlang-devel librsvg-devel libzip-devel libtoml++-devel"
 short_desc="the Hyprland cursor format, library and utilities"
 maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprcursor"
 distfiles="https://github.com/hyprwm/hyprcursor/archive/refs/tags/v${version}.tar.gz"
-checksum=3958b0d7b80bcabca1c46841016c7354afc3cbcbf86b785b7b6289524cb5ec5c
+checksum=c830733c3e5243e0c5f06b8d137828a45083cc7483e7e874c4bd42e38a82ed9d
 
 post_install() {
 	vlicense LICENSE
