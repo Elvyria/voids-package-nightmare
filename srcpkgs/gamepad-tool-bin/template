@@ -2,9 +2,7 @@
 pkgname=gamepad-tool-bin
 version=1.2
 revision=1
-# Collected with ldd, might be innacurate.
-# ldd gamepad-tool | awk '{print $3}' | xargs -I _ sh -c "xlocate _ | awk 'NR==1{print \$1}'"
-depends="SDL2 alsa-lib brotli bzip2 dbus-libs double-conversion freetype graphite harfbuzz icu lame libX11 libXScrnSaver libXau libXcursor libXdmcp libXext libXfixes libXi libXrandr libXrender libasyncns libcrypto3 libdecor libffi libflac libglvnd libmpg123 libogg libpcre2 libpng libpulseaudio libsndfile libssl3 libvorbis libxcb libxkbcommon libzstd opus qt5-core qt5-gui qt5-network qt5-widgets wayland zlib"
+depends="SDL2 qt5-core qt5-gui qt5-network qt5-widgets"
 short_desc="GUI tool to create/modify gamepad mappings that use SDL2"
 maintainer="Elvyria"
 license="custom: Copyright © General Arcade. All rights reserved"
