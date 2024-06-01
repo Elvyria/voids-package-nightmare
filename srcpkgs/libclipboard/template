@@ -1,0 +1,26 @@
+# Template file for 'libclipboard'.
+pkgname=libclipboard
+version=1.1
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config"
+makedepends="libxcb-devel"
+short_desc="Lightweight cross-platform clipboard library"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://jtanx.github.io/libclipboard/"
+distfiles="https://github.com/jtanx/libclipboard/archive/refs/tags/v${version}.tar.gz"
+checksum=253f34a770be7ad9193be890b395dd2256119c9e3aa66e157bd465960515d47a
+
+post_install() {
+	vlicense LICENSE
+}
+
+libclipboard-devel_package() {
+	depends="libclipboard-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+	}
+}
