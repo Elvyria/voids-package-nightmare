@@ -1,17 +1,17 @@
 # Template file for 'dwarfs'
 pkgname=dwarfs
-version=0.7.2
+version=0.9.10
 revision=1
 build_style=cmake
 configure_args="-Wno-dev"
 hostmakedepends="pkg-config git"
-makedepends="boost-devel double-conversion-devel fmt-devel fuse3-devel gflags-devel glog-devel jemalloc-devel libaio-devel libarchive-devel libdwarf-devel libevent-devel libiberty-devel liblz4-devel liblzma-devel libsodium-devel liburing-devel ruby-ronn snappy-devel libutf8cpp-devel"
+makedepends="boost-devel chrono-date-devel double-conversion-devel fmt-devel fuse3-devel gflags-devel glog-devel jemalloc-devel libaio-devel libarchive-devel libdwarf-devel libevent-devel libiberty-devel liblz4-devel liblzma-devel libsodium-devel liburing-devel libutf8cpp-devel python3-mistletoe ruby-ronn snappy-devel"
 short_desc="A fast high compression read-only file system"
 maintainer="Elvyria"
 license="GPL-3.0"
 homepage="https://github.com/mhx/dwarfs"
 distfiles="https://github.com/mhx/dwarfs/releases/download/v${version}/dwarfs-${version}.tar.xz"
-checksum=2fbddf0c7fee00b175a70f9de2167a0ddbfa32cff6a2d9b29f585fe960174fd9
+checksum=b67703497643a53e956e46e6de081b96e9ed9adc4cd78246d00e73fe238ae2be
 
 post_extract() {
 	mkdir include/utf8cpp
