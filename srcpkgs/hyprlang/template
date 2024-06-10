@@ -1,6 +1,6 @@
 # Template file for 'hyprlang'
 pkgname=hyprlang
-version=0.5.1
+version=0.5.2
 revision=1
 build_style=cmake
 short_desc="The official implementation library for the hypr config language"
@@ -8,7 +8,7 @@ maintainer="Elvyria"
 license="GPL-3.0"
 homepage="https://hyprland.org/hyprlang"
 distfiles="https://github.com/hyprwm/hyprlang/archive/refs/tags/v${version}.tar.gz"
-checksum=7f521906d3f40b8d7b2bfcbe29a8286e9c65a7a601994344278bc16325bbd75d
+checksum=66a1f87634c8ecdeb67d7ccc499a3fc1c19b064a098b103be042751e7430b5cc
 
 hyprlang-devel_package() {
 	depends="hyprlang-${version}_${revision}"
