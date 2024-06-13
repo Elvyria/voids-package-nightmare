@@ -1,0 +1,25 @@
+# Template file for 'hyprutils'
+pkgname=hyprutils
+version=0.1.2
+revision=1
+build_style=cmake
+short_desc="Utilities library used across the Hyprland ecosystem"
+maintainer="Elvyria"
+license="BSD-3-Clause"
+homepage="https://github.com/hyprwm/hyprutils"
+distfiles="https://github.com/hyprwm/hyprutils/archive/refs/tags/v${version}.tar.gz"
+checksum=a11598fbba1dcb8e1f939935ed55339b481816b1fddc89dbbfe4dafb4d753562
+
+post_install() {
+	vlicense LICENSE
+}
+
+hyprutils-devel_package() {
+	depends="hyprutils-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/*.so
+		vmove usr/lib/pkgconfig
+	}
+}
