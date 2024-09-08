@@ -1,20 +1,25 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.41.2
+version=0.43.0
 revision=1
 build_style=cmake
-configure_args="-DNO_SYSTEMD:Bool=true -DCMAKE_BUILD_TYPE:STRING=Release"
-hostmakedepends="autoconf cmake cpio git glslang hwids jq meson mk-configure ninja pkg-config"
+configure_args="
+	-DNO_SYSTEMD:Bool=true
+	-DCMAKE_C_COMPILER=clang
+	-DCMAKE_CXX_COMPILER=clang++
+	-DCMAKE_CXX_FLAGS=-stdlib=libc++
+	-DCMAKE_BUILD_TYPE:STRING=Release
+"
+hostmakedepends="autoconf cmake cpio git glslang jq meson mk-configure ninja pkg-config clang18"
 makedepends="
+	aquamarine-devel
+	cairo-devel
+	ffmpeg-devel
 	hyprcursor-devel
 	hyprlang-devel
 	hyprutils-devel
 	hyprwayland-scanner
-	Vulkan-Headers
-	cairo-devel
-	ffmpeg-devel
-	libX11-devel
-	libdisplay-info-devel
+	libcxx-devel
 	libdrm-devel
 	libgbm-devel
 	libglvnd-devel
@@ -22,28 +27,30 @@ makedepends="
 	libliftoff-devel
 	libseat-devel
 	libtoml++-devel
+	libX11-devel
+	libXcursor-devel
 	libxkbcommon-devel
 	pango-devel
-	pixman-devel
+	Vulkan-Headers
 	vulkan-loader
 	wayland-devel
 	wayland-protocols
-	xcb-util-image-devel
 	xcb-util-errors-devel
+	xcb-util-image-devel
 	xcb-util-renderutil-devel
 	xcb-util-wm-devel
 	xorg-server-xwayland
 "
 depends="
+	glslang
 	hyprcursor>=0.1.9
 	hyprlang>=0.5.2
-	Vulkan-ValidationLayers
-	glslang
-	libXfixes
 	libliftoff
 	libxcb
+	libXfixes
 	polkit
 	vulkan-loader
+	Vulkan-ValidationLayers
 	wayland-protocols
 	xcb-proto
 	xcb-util
@@ -55,7 +62,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://hyprland.org"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=c2de1ea4f02ae817d42268874f6be692d807dcff9817a0cd438f9a221b045369
+checksum=fa2ce308f6f4524d1564163fd5ada2ccac919b4b48048b07f04e6b96aa0f1e6c
 
 post_install() {
 	vlicense LICENSE
