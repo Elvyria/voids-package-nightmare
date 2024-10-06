@@ -1,0 +1,17 @@
+# Template file for 'umu-launcher'
+pkgname=umu-launcher
+version=1.1.1
+revision=1
+build_style=gnu-makefile
+hostmakedepends="hatchling python3-build python3-installer scdoc"
+depends="python3"
+short_desc="Unified launcher for Windows games on Linux"
+maintainer="Elvyria"
+license="GPL-3.0"
+homepage="https://github.com/Open-Wine-Components/umu-launcher"
+distfiles="https://github.com/Open-Wine-Components/umu-launcher/archive/refs/tags/${version}.tar.gz"
+checksum=b368515d71704d1fc1d37565b30a6212523d14a36d4b95f7a1ab181ba00f4866
+
+pre_configure() {
+	./configure.sh --prefix=/usr
+}
