@@ -1,19 +1,12 @@
 # Template file for 'aquamarine'
 pkgname=aquamarine
-version=0.4.1
+version=0.4.5
 revision=1
 build_style=cmake
-configure_args="
-	-DCMAKE_C_COMPILER=clang
-	-DCMAKE_CXX_COMPILER=clang++
-	-DCMAKE_CXX_FLAGS=-stdlib=libc++
-	-DCMAKE_BUILD_TYPE:STRING=Release
-"
-hostmakedepends="pkg-config clang18"
+hostmakedepends="pkg-config"
 makedepends="
 	hwids
 	hyprutils-devel
-	libcxx-devel
 	hyprwayland-scanner
 	libdisplay-info-devel
 	libdrm-devel
@@ -31,7 +24,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/aquamarine"
 distfiles="https://github.com/hyprwm/aquamarine/archive/refs/tags/v${version}.tar.gz"
-checksum=efbdd27204522823f58dc38110cf6f696d3e6f0dec02a96d6f0465592b45a979
+checksum=53b9d988377d1a8b7302b18b01db79fe14067a3d8ff94b4c7f93cdcadb6e6e41
 
 aquamarine-devel_package() {
 	depends="aquamarine-${version}_${revision}"

@@ -1,16 +1,13 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.43.0
+version=0.45.0
 revision=1
 build_style=cmake
 configure_args="
 	-DNO_SYSTEMD:Bool=true
-	-DCMAKE_C_COMPILER=clang
-	-DCMAKE_CXX_COMPILER=clang++
-	-DCMAKE_CXX_FLAGS=-stdlib=libc++
 	-DCMAKE_BUILD_TYPE:STRING=Release
 "
-hostmakedepends="autoconf cmake cpio git glslang jq meson mk-configure ninja pkg-config clang18"
+hostmakedepends="autoconf cmake cpio git glslang jq meson mk-configure ninja pkg-config"
 makedepends="
 	aquamarine-devel
 	cairo-devel
@@ -19,7 +16,6 @@ makedepends="
 	hyprlang-devel
 	hyprutils-devel
 	hyprwayland-scanner
-	libcxx-devel
 	libdrm-devel
 	libgbm-devel
 	libglvnd-devel
@@ -62,7 +58,7 @@ maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://hyprland.org"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=fa2ce308f6f4524d1564163fd5ada2ccac919b4b48048b07f04e6b96aa0f1e6c
+checksum=9690b5c0c10fdc277ea7988a28318941dde854260ede4339634dbf2bba8192a3
 
 post_install() {
 	vlicense LICENSE

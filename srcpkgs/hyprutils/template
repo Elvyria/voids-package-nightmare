@@ -1,22 +1,16 @@
 # Template file for 'hyprutils'
 pkgname=hyprutils
-version=0.2.1
+version=0.2.5
 revision=1
 build_style=cmake
-configure_args="
-	-DCMAKE_C_COMPILER=clang
-	-DCMAKE_CXX_COMPILER=clang++
-	-DCMAKE_CXX_FLAGS=-stdlib=libc++
-	-DCMAKE_BUILD_TYPE:STRING=Release
-"
-hostmakedepends="pkg-config clang"
-makedepends="libcxx-devel pixman-devel"
+hostmakedepends="pkg-config"
+makedepends="pixman-devel"
 short_desc="Utilities library used across the Hyprland ecosystem"
 maintainer="Elvyria"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprutils"
 distfiles="https://github.com/hyprwm/hyprutils/archive/refs/tags/v${version}.tar.gz"
-checksum=061449c828d0cdaf7b147d9e232282fd0dde997c6ec7c43d51fe96d878b66c12
+checksum=19737eca82d9a4c4b4108864960d7f460ad670c1fd95a87a90640153c91dc818
 
 post_install() {
 	vlicense LICENSE
