@@ -1,0 +1,16 @@
+# Template file for 'python3-screeninfo'
+pkgname=python3-screeninfo
+version=0.8.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+short_desc="Fetch location and size of physical screens"
+maintainer="Elvyria"
+license="MIT"
+homepage="https://github.com/rr-/screeninfo"
+distfiles="${PYPI_SITE}/s/screeninfo/screeninfo-${version}.tar.gz"
+checksum=9983076bcc7e34402a1a9e4d7dabf3729411fd2abb3f3b4be7eba73519cd2ed1
+
+post_install() {
+	vlicense LICENSE.md
+}
